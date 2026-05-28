@@ -28,11 +28,9 @@ O painel foi construído sem dependências de frameworks CSS modernos (como o Bo
 * docker compose ps → FAZ A LEITURA DA APLICAÇÃO
 * docker compose down → ENCERRA A APLICAÇÃO
   
-👥 Equipe de Desenvolvimento
-Este projeto foi desenvolvido colaborativamente por:
+## 👥 Equipe de Desenvolvimento
 
-*Emmanuelle Talita Geraldo Ferreira da Silva
-
-*Matheus Vinicius Coelho de Souza
-
-*Hiago Souza Tude
+* Este projeto foi desenvolvido colaborativamente por:
+* Emmanuelle Talita Geraldo Ferreira da Silva
+* Matheus Vinicius Coelho de Souza
+* Hiago Souza Tude
