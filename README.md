@@ -25,5 +25,14 @@ O painel foi construído sem dependências de frameworks CSS modernos (como o Bo
 
 * docker compose up --build -d → INICIA A APLICAÇÃO DO CONTAINER EM MODO DETALHADO
 * docker compose logs -f → FAZ A LEITURA DAS LOGS DO BD
-* docker compose ps → PARA PAUSAR A APLICAÇÃO
+* docker compose ps → FAZ A LEITURA DA APLICAÇÃO
 * docker compose down → ENCERRA A APLICAÇÃO
+  
+👥 Equipe de Desenvolvimento
+Este projeto foi desenvolvido colaborativamente por:
+
+**Emmanuelle Talita Geraldo Ferreira da Silva
+
+**Matheus Vinicius Coelho de Souza
+
+**Hiago Souza Tude
