@@ -1,6 +1,6 @@
-# Arena Gamer – Painel de Controle (Windows XP Edition)
+# Cafezinho da Nostalgia – Lan "hause" (Windows XP Edition)
 
-Bem-vindo ao **Arena Gamer**, um sistema de gestão de LAN House com uma interface nostálgica baseada no design clássico do **Windows XP (Luna)**. Este projeto foi desenvolvido para unir a praticidade de um painel de controle moderno com a estética icônica dos anos 2000.
+Bem-vindo ao **Cafezinho da Nostalgia**, um sistema de gestão de LAN House com uma interface nostálgica baseada no design clássico do **Windows XP (Luna)**. Este projeto foi desenvolvido para unir a praticidade de um painel de controle moderno com a estética icônica dos anos 2000.
 
 ## 🚀 Funcionalidades
 
