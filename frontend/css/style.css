@@ -1,0 +1,83 @@
+/* Estilo Windows XP (Luna) */
+body {
+    background-color: #3a6ea5; /* Fundo clássico do desktop */
+    font-family: 'Tahoma', 'Segoe UI', sans-serif;
+}
+
+/* Barra Superior */
+.navbar {
+    background: linear-gradient(to bottom, #4a8ad8 0%, #3a6ea5 50%, #2e598a 90%) !important;
+    border-bottom: 2px solid #1a3c63;
+}
+
+/* Cards de Computador no Grid (Estilo XP) */
+.pc-card {
+    border: 1px solid #3f3f3f; 
+    padding: 16px;
+    color: #dfdfdf;
+    margin-bottom: 10px;
+    box-shadow: inset 1px 1px 0px rgba(255,255,255,0.3), 2px 2px 3px rgba(0,0,0,0.4);
+}
+
+/* Status - Cores clássicas WinXP */
+.pc-card.disponivel  { 
+    background: #558833; 
+    border-color: #58862a; 
+} 
+.pc-card.ocupado     { 
+    background: #cc3333; 
+    border-color: #881111; 
+}
+.pc-card.manutencao  { 
+    background: #f0a020; 
+    color: #0f0f0f; 
+    border-color: #4c87d6; 
+}
+
+/* Ajuste de tipografia para o card */
+.pc-card .numero { 
+    font-size: 1.5rem; 
+    font-weight: 700; 
+    text-shadow: 1px 1px 1px #272727;
+}
+/* Abas */
+.nav-tabs .nav-link {
+    background: linear-gradient(to bottom, #4a8ad8 0%, #3a6ea5 50%, #2e598a 90%);
+    color: #ffffff; 
+    border-bottom: 2px solid #416691; 
+}
+.nav-tabs .nav-link.active {
+    background: linear-gradient(to bottom, #4a8ad8 0%, #3a6ea5 50%, #2e598a 90%);
+    color: #ffffff; 
+    font-weight: bold; 
+    border-bottom: 1px solid #2e598a; 
+}
+
+/* Cards */
+.card {
+    border: 1px linear-gradient(to bottom, #4a8ad8 0%, #3a6ea5 50%, #2e598a 100%);
+    border-radius: 0;
+    box-shadow: 2px 2px 4px rgba(32, 32, 32, 0.3);
+}
+.card-header {
+    background: linear-gradient(to bottom, #4a8ad8 0%, #3a6ea5 50%, #2e598a 100%);
+    color: #ebebeb;
+    border: 1px solid #2e598a;
+}
+
+/* Tabelas */
+.table thead th {
+    background: linear-gradient(to bottom, #4a8ad8 0%, #3a6ea5 50%, #2e598a 100%);
+    color: #ebebeb;
+    border: 1px solid #2e598a;
+}
+
+/* Botões */
+.btn-primary { background-color: #2e598a; border-color: #205fa7; }
+.btn-success { background-color: #558833; border-color: #5ba016; }
+.btn-danger  { background-color: #cc3333; border-color: #c91b1b; }
+
+/* Status */
+.pc-card.disponivel  { background: #558833; }
+.pc-card.ocupado     { background: #cc3333; }
+.pc-card.manutencao  { background: #f0a020; color: #202020; }

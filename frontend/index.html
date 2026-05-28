@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafezinho da Nostalgia / Painel</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-dark bg-dark px-4">
+    <span class="navbar-brand fw-bold fs-4">
+        <i class="bi bi-controller me-2"></i>Cafezinho da Nostalgia - Build Lan House
+    </span>
+    <span id="relogio" class="text-white small fw-bold"></span>
+</nav>
+
+<div class="container-fluid mt-3 px-4">
+
+    <!-- Abas de navegação -->
+    <ul class="nav nav-tabs mb-4" id="abas">
+        <li class="nav-item">
+            <a class="nav-link active" data-tab="dashboard" href="#">
+                <i class="bi bi-speedometer2 me-1"></i>Dashboard
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-tab="computadores" href="#">
+                <i class="bi bi-pc-display me-1"></i>Computadores
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-tab="sessoes" href="#">
+                <i class="bi bi-play-circle me-1"></i>Sessoes
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-tab="clientes" href="#">
+                <i class="bi bi-people me-1"></i>Clientes
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-tab="produtos" href="#">
+                <i class="bi bi-bag me-1"></i>Produtos
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-tab="caixa" href="#">
+                <i class="bi bi-cash-coin me-1"></i>Caixa
+            </a>
+        </li>
+    </ul>
+
+    <!-- ── DASHBOARD ────────────────────────────────── -->
+    <div id="tab-dashboard" class="tab-content">
+        <div class="row g-3 mb-4">
+            <div class="col-md-3">
+                <div class="card text-bg-success h-100">
+                    <div class="card-body d-flex align-items-center gap-3">
+                        <i class="bi bi-pc-display fs-1"></i>
+                        <div>
+                            <div class="fs-2 fw-bold" id="kpi-disponiveis">–</div>
+                            <div class="small">PCs Disponiveis</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-bg-danger h-100">
+                    <div class="card-body d-flex align-items-center gap-3">
+                        <i class="bi bi-controller fs-1"></i>
+                        <div>
+                            <div class="fs-2 fw-bold" id="kpi-ocupados">–</div>
+                            <div class="small">PCs Ocupados</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-bg-warning h-100">
+                    <div class="card-body d-flex align-items-center gap-3">
+                        <i class="bi bi-tools fs-1"></i>
+                        <div>
+                            <div class="fs-2 fw-bold" id="kpi-manutencao">–</div>
+                            <div class="small">Em Manutenção</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-bg-primary h-100">
+                    <div class="card-body d-flex align-items-center gap-3">
+                        <i class="bi bi-cash-stack fs-1"></i>
+                        <div>
+                            <div class="fs-2 fw-bold" id="kpi-receita">–</div>
+                            <div class="small">Receita em Aberto</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h5 class="mb-3">Ativos Agora</h5>
+        <div id="tabela-ativas-container"></div>
+    </div>
+
+    <!-- ── COMPUTADORES ──────────────────────────────── -->
+    <div id="tab-computadores" class="tab-content d-none">
+        <div id="computadores-grid" class="row g-3"></div>
+    </div>
+
+    <!-- ── SESSÕES ───────────────────────────────────── -->
+    <div id="tab-sessoes" class="tab-content d-none">
+        <div class="row g-4">
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-header fw-semibold">
+                        <i class="bi bi-play-circle me-1"></i>Abrir Sessao
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label class="form-label">Cliente</label>
+                            <select class="form-select" id="sel-cliente-sessao"></select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Computador</label>
+                            <select class="form-select" id="sel-computador-sessao"></select>
+                        </div>
+                        <button class="btn btn-success w-100" onclick="abrirSessao()">
+                            <i class="bi bi-play-fill me-1"></i>Iniciar Sessao
+                        </button>
+                        <div id="msg-sessao" class="mt-2"></div>
+                    </div>
+                </div>
+
+                <div class="card mt-3">
+                    <div class="card-header fw-semibold">
+                        <i class="bi bi-stop-circle me-1"></i>Fechar Sessao
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label class="form-label">Sessao Ativa</label>
+                            <select class="form-select" id="sel-sessao-fechar"></select>
+                        </div>
+                        <button class="btn btn-danger w-100" onclick="fecharSessao()">
+                            <i class="bi bi-stop-fill me-1"></i>Encerrar Sessao
+                        </button>
+                        <div id="msg-fechar" class="mt-2"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <h5>Historico Recente</h5>
+                <div id="historico-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── CLIENTES ──────────────────────────────────── -->
+    <div id="tab-clientes" class="tab-content d-none">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header fw-semibold">
+                        <i class="bi bi-person-plus me-1"></i>Novo Cliente
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label class="form-label">Nome</label>
+                            <input type="text" class="form-control" id="inp-nome-cliente">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">E-mail</label>
+                            <input type="email" class="form-control" id="inp-email-cliente">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Telefone</label>
+                            <input type="text" class="form-control" id="inp-tel-cliente">
+                        </div>
+                        <button class="btn btn-primary w-100" onclick="cadastrarCliente()">
+                            <i class="bi bi-person-check me-1"></i>Cadastrar
+                        </button>
+                        <div id="msg-cliente" class="mt-2"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <ul class="nav nav-tabs mb-3" id="tabs-clientes">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-subtab="lista-clientes" href="#">Lista</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-subtab="ranking-clientes" href="#">Ranking</a>
+                    </li>
+                </ul>
+                <div id="lista-clientes-content"></div>
+                <div id="ranking-clientes-content" class="d-none"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── PRODUTOS ──────────────────────────────────── -->
+    <div id="tab-produtos" class="tab-content d-none">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header fw-semibold">
+                        <i class="bi bi-cart-plus me-1"></i>Registrar Venda
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label class="form-label">Sessao Ativa</label>
+                            <select class="form-select" id="sel-sessao-venda"></select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Produto</label>
+                            <select class="form-select" id="sel-produto-venda"></select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Quantidade</label>
+                            <input type="number" class="form-control" id="inp-qtd-venda" value="1" min="1">
+                        </div>
+                        <button class="btn btn-primary w-100" onclick="registrarVenda()">
+                            <i class="bi bi-bag-check me-1"></i>Vender
+                        </button>
+                        <div id="msg-venda" class="mt-2"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <h5>Estoque</h5>
+                <div id="produtos-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ── CAIXA ─────────────────────────────────────── -->
+    <div id="tab-caixa" class="tab-content d-none">
+        <div class="row g-3 mb-4">
+            <div class="col-md-4">
+                <div class="card text-bg-success">
+                    <div class="card-body">
+                        <div class="small mb-1">Total de Entradas</div>
+                        <div class="fs-3 fw-bold" id="caixa-entradas">–</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-bg-danger">
+                    <div class="card-body">
+                        <div class="small mb-1">Total de Saidas</div>
+                        <div class="fs-3 fw-bold" id="caixa-saidas">–</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card text-bg-primary">
+                    <div class="card-body">
+                        <div class="small mb-1">Saldo</div>
+                        <div class="fs-3 fw-bold" id="caixa-saldo">–</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h5>Últimos Lançamentos</h5>
+        <div id="caixa-container"></div>
+    </div>
+
+</div><!-- /container -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
