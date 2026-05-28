@@ -23,7 +23,7 @@ O painel foi construído sem dependências de frameworks CSS modernos (como o Bo
 
 ## 📋 Como Executar
 
-* docker compose up --build -d #INICIA A APLICAÇÃO DO CONTAINER EM MODO DETALHADO
+* docker compose up --build -d ```bash INICIA A APLICAÇÃO DO CONTAINER EM MODO DETALHADO
 * docker compose logs -f #FAZ A LEITURA DAS LOGS DO BD
 * docker compose ps #PARA PAUSAR A APLICAÇÃO
 * docker compose down #ENCERRA A APLICAÇÃO
