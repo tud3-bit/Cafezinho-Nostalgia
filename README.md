@@ -31,8 +31,8 @@ O painel foi construído sem dependências de frameworks CSS modernos (como o Bo
 👥 Equipe de Desenvolvimento
 Este projeto foi desenvolvido colaborativamente por:
 
-**Emmanuelle Talita Geraldo Ferreira da Silva
+*Emmanuelle Talita Geraldo Ferreira da Silva
 
-**Matheus Vinicius Coelho de Souza
+*Matheus Vinicius Coelho de Souza
 
-**Hiago Souza Tude
+*Hiago Souza Tude
